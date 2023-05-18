@@ -1,0 +1,30 @@
+{
+  "name": "@bgdn/dynamite",
+  "version": "0.0.1",
+  "description": "DynamoDB object mapper",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgdnp/dynamite.git"
+  },
+  "keywords": [
+    "dynamodb",
+    "object",
+    "mapper"
+  ],
+  "author": "Bogdan Petkovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bgdnp/dynamite/issues"
+  },
+  "homepage": "https://github.com/bgdnp/dynamite#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "husky": "^8.0.0"
+  }
+}
