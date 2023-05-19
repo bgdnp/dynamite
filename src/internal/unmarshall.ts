@@ -8,8 +8,6 @@ export function unmarshall<TEntity extends Record<string, any>>(
 ): TEntity {
   item = item ?? items.find((item) => item.entity.S === metadata.name);
 
-  console.log(metadata.attributes.map((key) => [key, item![key]]));
-
   const attributes = unmarshallUtil(Object.fromEntries(metadata.attributes.map((key) => [key, item![key]])));
   const children = metadata.children.reduce((agg, child) => {
     if (child.list) {
