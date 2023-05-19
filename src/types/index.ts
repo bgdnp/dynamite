@@ -11,6 +11,7 @@ export type EntityMetadata<TEntity extends Record<string, any> = Record<string, 
   attributes: string[];
   children: {
     property: string;
+    list: boolean;
     metadata: () => EntityMetadata;
   }[];
 };

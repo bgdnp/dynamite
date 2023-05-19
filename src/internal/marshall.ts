@@ -17,9 +17,15 @@ export function marshall<TEntity extends Record<string, any>>(
 
   const children = metadata.children
     .map((child) => {
-      return marshall(entity[child.property], child.metadata(), { name: metadata.name, key: entity[metadata.key] });
+      if (child.list) {
+        return entity[child.property].map((childEntity: Record<string, any>) =>
+          marshall(childEntity, child.metadata(), { name: metadata.name, key: entity[metadata.key] })
+        );
+      } else {
+        return marshall(entity[child.property], child.metadata(), { name: metadata.name, key: entity[metadata.key] });
+      }
     })
-    .flat();
+    .flat(2);
 
   return [item, ...children];
 }

@@ -1,11 +1,10 @@
+import { EntityMetadata } from '@types';
 import { items } from '../__mocks__/items';
+import { unmarshall } from './unmarshall';
 import { Address, Company, Employee, newCompany } from '../__mocks__/entities';
-import { EntityMetadata } from '../types';
-import { marshall } from './marshall';
 
-describe('marshall', () => {
-  it('should marshall entity', () => {
-    const company = newCompany();
+describe('unmarshall', () => {
+  it('should unmarshall item', () => {
     const metadata: EntityMetadata<Company> = {
       name: 'Company',
       constructor: Company,
@@ -37,6 +36,9 @@ describe('marshall', () => {
       ],
     };
 
-    expect(marshall(company, metadata)).toEqual(expect.arrayContaining(items));
+    const entity = unmarshall(items, metadata);
+
+    expect(entity).toBeInstanceOf(Company);
+    expect(entity).toEqual(newCompany());
   });
 });
