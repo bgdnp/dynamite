@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
     "strict": true,
+    "strictPropertyInitialization": false,
     "module": "CommonJS",
     "target": "ESNext",
     "declaration": true,
+    "baseUrl": ".",
     "rootDir": "src",
     "outDir": "dist",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@internal": ["./src/internal"],
+      "@types": ["./src/types"]
+    }
   }
 }
