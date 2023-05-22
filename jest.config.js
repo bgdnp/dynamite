@@ -7,4 +7,8 @@ module.exports = {
   },
   maxConcurrency: 4,
   maxWorkers: 4,
+  moduleNameMapper: {
+    '^@internal': '<rootDir>/src/internal',
+    '^@types': '<rootDir>/src/types',
+  },
 };
