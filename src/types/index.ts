@@ -1,12 +1,12 @@
 import { AttributeValue } from '@aws-sdk/client-dynamodb';
 
-export type EntityContructor<TEntity extends Record<string, any> = Record<string, any>> = {
+export type EntityConstructor<TEntity extends Record<string, any> = Record<string, any>> = {
   new (): TEntity;
 };
 
 export type EntityMetadata<TEntity extends Record<string, any> = Record<string, any>> = {
   name: string;
-  constructor: EntityContructor<TEntity>;
+  constructor: EntityConstructor<TEntity>;
   key: string;
   attributes: string[];
   children: {

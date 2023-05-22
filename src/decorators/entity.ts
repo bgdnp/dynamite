@@ -1,8 +1,8 @@
 import { MetadataStorage } from '@internal';
-import { EntityContructor } from '@types';
+import { EntityConstructor } from '@types';
 
 export function Entity() {
-  return (constructor: EntityContructor) => {
+  return (constructor: EntityConstructor) => {
     MetadataStorage.set(constructor, {
       name: constructor.name,
       constructor: constructor,

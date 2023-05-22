@@ -1,9 +1,9 @@
 import { MetadataStorage } from '@internal';
-import { EntityContructor } from '@types';
+import { EntityConstructor } from '@types';
 
 export function KeyAttribute() {
   return (target: Record<string, any>, property: string) => {
-    const constructor = target.constructor as EntityContructor;
+    const constructor = target.constructor as EntityConstructor;
     const metadata = MetadataStorage.get(constructor);
 
     metadata.attributes.push(property);
