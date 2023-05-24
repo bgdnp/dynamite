@@ -40,8 +40,8 @@ export const newCompany = (): Company => {
   const company = new Company();
   company.id = 'a';
   company.name = 'A Company';
-  company.employees = [{ email: 'someone@a.com', name: 'Someone' }];
-  company.address = { id: 'street148', street: 'Street 148', city: 'City' };
+  company.employees = [Object.assign(new Employee(), { email: 'someone@a.com', name: 'Someone' })];
+  company.address = Object.assign(new Address(), { id: 'street148', street: 'Street 148', city: 'City' });
 
   return company;
 };
